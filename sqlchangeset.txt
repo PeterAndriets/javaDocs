@@ -1,0 +1,8 @@
+--liquibase formatted sql
+--changeset IgorOdayny:1
+--Change "username" field length in "user_account" table from 200 characters to 256. ("ycu" db)
+ALTER TABLE ycu.public.user_account ALTER COLUMN username TYPE varchar(256);
+
+--changeset IgorOdayny:2
+--Change "sid" field length in "acl_cid" table from 100 characters to 256. ("portal" db)
+ALTER TABLE portal.public.acl_sid ALTER COLUMN sid TYPE varchar(256);
